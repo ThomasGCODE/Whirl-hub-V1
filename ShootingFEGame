@@ -32,7 +32,7 @@ local MainSection = MainTab:CreateSection("main")
 
 Rayfield:Notify({
    Title = "Thanks for using whirl hub",
-   Content = "Good Gui",
+   Content = "OP GUI!",
    Duration = 4,
    Image = nil,
    Actions = { -- Notification Buttons
@@ -58,7 +58,7 @@ end)
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Fly",
+   Name = "Flying Script",
    Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
    end,
@@ -92,13 +92,6 @@ end)
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Aim Bot coming soon",
-   Callback = function()
-    --coming soon script here
-   end,
-})
-
-local Button = MainTab:CreateButton({
    Name = "Admin script inf yeild",
    Callback = function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
@@ -108,7 +101,7 @@ local Button = MainTab:CreateButton({
 local Button = MainTab:CreateButton({
    Name = "noclip",
    Callback = function()
-    noclip = false
+    noclip = true
 game:GetService('RunService').Stepped:connect(function()
 if noclip then
 game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
@@ -136,7 +129,7 @@ local Slider = MainTab:CreateSlider({
    CurrentValue = 16,
    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
    end,
 })
 
@@ -146,5 +139,29 @@ local Toggle = MainTab:CreateToggle({
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
     -- coming soon
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Bigger hitbox OP",
+   Callback = function()
+		_G.HeadSize = 15
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
    end,
 })
