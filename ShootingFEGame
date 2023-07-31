@@ -32,7 +32,7 @@ local MainSection = MainTab:CreateSection("main")
 
 Rayfield:Notify({
    Title = "Thanks for using whirl hub",
-   Content = "OP GUI!",
+   Content = "Made By _s129 on discord",
    Duration = 4,
    Image = nil,
    Actions = { -- Notification Buttons
